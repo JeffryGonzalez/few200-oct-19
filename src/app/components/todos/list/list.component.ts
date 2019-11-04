@@ -16,7 +16,5 @@ export class ListComponent implements OnInit {
 
   ngOnInit() {
   }
-  doIt() {
 
-  }
 }
