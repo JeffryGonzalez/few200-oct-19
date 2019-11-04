@@ -2,6 +2,6 @@
   <h3>Your Todo List</h3>
 </header>
 <section>
-  <app-entry></app-entry>
-  <app-list></app-list>
+  <app-entry (itemAdded)="onItemAdded($event)"></app-entry>
+  <app-list [items]="stuff"></app-list>
 </section>

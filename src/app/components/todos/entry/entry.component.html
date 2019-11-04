@@ -1,8 +1,10 @@
 <div class="form-group">
   <label for="item">Item</label>
   <input class="form-control"
+         #item
          name="item">
   <input type="button"
+         (click)="addItem(item)"
          class="btn btn-primary"
          value="Add Todo Item">
 </div>
