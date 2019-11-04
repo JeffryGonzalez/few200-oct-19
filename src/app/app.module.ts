@@ -9,6 +9,8 @@ import { NavComponent } from './components/nav/nav.component';
 import { TodosComponent } from './components/todos/todos.component';
 import { EntryComponent } from './components/todos/entry/entry.component';
 import { ListComponent } from './components/todos/list/list.component';
+import { TodoDataService } from './services/todo-data.service';
+import { StatusComponent } from './components/todos/status/status.component';
 
 @NgModule({
   declarations: [
@@ -18,13 +20,14 @@ import { ListComponent } from './components/todos/list/list.component';
     NavComponent,
     TodosComponent,
     EntryComponent,
-    ListComponent
+    ListComponent,
+    StatusComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [TodoDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -3,5 +3,6 @@
 </header>
 <section>
   <app-entry (itemAdded)="onItemAdded($event)"></app-entry>
-  <app-list [items]="stuff"></app-list>
+  <app-list [items]="stuff$ | async"></app-list>
+  <app-status [items$]="stuff$"></app-status>
 </section>

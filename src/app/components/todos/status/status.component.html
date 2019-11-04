@@ -1,0 +1,4 @@
+<footer class="alert alert-info">
+  <p>You have {{ (status$ | async)?.totalTodos }} items.
+    {{ (status$ | async)?.incompleteTodos }} are incomplete.</p>
+</footer>
