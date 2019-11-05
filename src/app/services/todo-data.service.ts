@@ -1,6 +1,9 @@
 import { TodoItem } from '../components/todos/models';
 import { BehaviorSubject, of, Observable } from 'rxjs';
+import { ValidationService } from './validation-service';
+import { Injectable } from '@angular/core';
 
+@Injectable()
 export class TodoDataService {
 
   private subject: BehaviorSubject<TodoItem[]>;
@@ -9,12 +12,15 @@ export class TodoDataService {
     { id: '4', description: 'Learn Piano More Better', completed: true }
   ];
   id = 4;
-  constructor() {
+  constructor(private validator: ValidationService) {
 
     this.subject = new BehaviorSubject<TodoItem[]>(this.data);
   }
 
   getTodos(): Observable<TodoItem[]> {
+    if (this.validator.validateCreditCard('555-555-5555-')) {
+      // do this thing
+    }
     return this.subject.asObservable();
   }
 

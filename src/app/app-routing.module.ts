@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { TipCalculatorComponent } from './components/tip-calculator/tip-calculator.component';
 import { TodosComponent } from './components/todos/todos.component';
+import { CounterComponent } from './components/counter/counter.component';
 
 
 const routes: Routes = [
@@ -17,6 +18,10 @@ const routes: Routes = [
   {
     path: 'todos',
     component: TodosComponent
+  },
+  {
+    path: 'counter',
+    component: CounterComponent
   },
   {
     path: '**',

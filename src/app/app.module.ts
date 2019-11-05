@@ -11,6 +11,11 @@ import { EntryComponent } from './components/todos/entry/entry.component';
 import { ListComponent } from './components/todos/list/list.component';
 import { TodoDataService } from './services/todo-data.service';
 import { StatusComponent } from './components/todos/status/status.component';
+import { ValidationService } from './services/validation-service';
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { reducers } from './reducers';
+import { CounterComponent } from './components/counter/counter.component';
 
 @NgModule({
   declarations: [
@@ -21,13 +26,16 @@ import { StatusComponent } from './components/todos/status/status.component';
     TodosComponent,
     EntryComponent,
     ListComponent,
-    StatusComponent
+    StatusComponent,
+    CounterComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    StoreModule.forRoot(reducers),
+    StoreDevtoolsModule.instrument()
   ],
-  providers: [TodoDataService],
+  providers: [TodoDataService, ValidationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
