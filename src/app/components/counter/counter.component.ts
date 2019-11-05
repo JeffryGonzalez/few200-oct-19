@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ApplicationState, selectCurrentCount, selectDecrementDisabled, selectCountingBy } from 'src/app/reducers';
+import { ApplicationState, selectCurrentCount, selectDecrementDisabled, selectCountingBy, selectFizzBuzz } from 'src/app/reducers';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import * as actions from '../../actions/counter.actions';
+import { FizzBuzz } from './models';
 
 @Component({
   selector: 'app-counter',
@@ -14,6 +15,7 @@ export class CounterComponent implements OnInit {
   countingBy$: Observable<number>;
   count$: Observable<number>;
   decrementDisabled$: Observable<boolean>;
+  fizzBuzz$: Observable<FizzBuzz>;
 
   constructor(private store: Store<ApplicationState>) { }
 
@@ -21,6 +23,7 @@ export class CounterComponent implements OnInit {
     this.count$ = this.store.select(selectCurrentCount);
     this.decrementDisabled$ = this.store.select(selectDecrementDisabled);
     this.countingBy$ = this.store.select(selectCountingBy);
+    this.fizzBuzz$ = this.store.select(selectFizzBuzz);
   }
 
   increment() {

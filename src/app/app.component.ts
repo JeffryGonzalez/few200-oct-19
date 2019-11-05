@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { ApplicationState } from './reducers';
+import { applicationStarted } from './actions/app.actions';
 
 @Component({
   selector: 'app-root',
@@ -8,4 +11,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Front End Web 200';
 
+  constructor(store: Store<ApplicationState>) {
+    store.dispatch(applicationStarted());
+  }
 }

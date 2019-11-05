@@ -1,0 +1,20 @@
+.fizz {
+  color: green;
+  font-size: 3em;
+  font-weight: bolder;
+  text-shadow: 8px 6px 4px #B6CE34;
+}
+
+.buzz {
+  color: rebeccapurple;
+  font-size: 3em;
+  font-weight: bolder;
+  text-shadow: 8px 6px 4px #B6CE34;
+
+}
+
+.fizzbuzz {
+  background-color: orange;
+  background: linear-gradient(to right, #CE5937 0%, #1C6EA4 50%, #C59237 100%);
+  transform: scale(1.1) rotate(17deg) translate(-10px, 0px) skew(11deg, 0deg);
+}

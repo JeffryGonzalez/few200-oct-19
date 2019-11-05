@@ -1,5 +1,6 @@
 import { createSelector } from '@ngrx/store';
 import * as fromCounter from './counter.reducer';
+import { FizzBuzz } from '../components/counter/models';
 // TypeScript
 
 export interface ApplicationState {
@@ -32,4 +33,14 @@ export const selectDecrementDisabled = createSelector(
   selectCurrentCount,
   selectCountingBy,
   (current, by) => current - by < 0
+);
+
+export const selectFizzBuzz = createSelector(
+  selectCurrentCount,
+  (count) => {
+    return {
+      fizz: count === 0 ? false : count % 3 === 0,
+      buzz: count === 0 ? false : count % 5 === 0,
+    } as FizzBuzz;
+  }
 );
