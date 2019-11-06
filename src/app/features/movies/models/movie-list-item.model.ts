@@ -3,4 +3,5 @@ export interface MovieListItem {
   title: string;
   rentalPrice: number;
   rentalDays: number;
+  isTemporary: boolean;
 }

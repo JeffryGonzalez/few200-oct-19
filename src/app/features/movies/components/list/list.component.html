@@ -5,7 +5,7 @@
     <h5 class="card-title">{{ movie.title }}</h5>
     <p class="card-text">{{ movie.title }} rents for {{ movie.rentalPrice | currency }}
       for {{ movie.rentalDays }} days</p>
-    <a href="#"
-       class="btn btn-primary">Maybe Do Something</a>
+    <button [disabled]="movie.isTemporary"
+            class="btn btn-primary">Maybe Do Something</button>
   </div>
 </div>
