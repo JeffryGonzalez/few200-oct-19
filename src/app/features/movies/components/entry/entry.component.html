@@ -1,0 +1,28 @@
+<div>
+  <div class="form-group">
+    <label for="title">Title</label>
+    <input name="title"
+           #title
+           class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="rentalPrice">Rental Price</label>
+    <input type="number"
+           #rentalPrice
+           class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="rentalDays">Rental Days</label>
+    <select class="form-control"
+            #rentalDays
+            name="rentalDays">
+      <option value="2">2</option>
+      <option value="2">3</option>
+      <option value="2">5</option>
+    </select>
+  </div>
+  <input type="button"
+         (click)="add(title, rentalPrice, rentalDays)"
+         class="btn btn-success"
+         value="Add This Movie">
+</div>

@@ -1,0 +1,11 @@
+<div class="card"
+     *ngFor="let movie of model">
+
+  <div class="card-body">
+    <h5 class="card-title">{{ movie.title }}</h5>
+    <p class="card-text">{{ movie.title }} rents for {{ movie.rentalPrice | currency }}
+      for {{ movie.rentalDays }} days</p>
+    <a href="#"
+       class="btn btn-primary">Maybe Do Something</a>
+  </div>
+</div>
