@@ -1,5 +1,6 @@
 import { EntityState, createEntityAdapter } from '@ngrx/entity';
-import { createReducer, Action } from '@ngrx/store';
+import { createReducer, on, Action } from '@ngrx/store';
+import * as actions from '../actions/list.actions';
 
 export interface MovieEntity {
   id: string;
@@ -25,7 +26,8 @@ const initialState: State = {
 };
 
 const reducerFunction = createReducer(
-  initialState
+  initialState,
+  on(actions.addMovie, (state, action) => adapter.addOne(action.payload, state))
 );
 
 export function reducer(state: State = initialState, action: Action) {
