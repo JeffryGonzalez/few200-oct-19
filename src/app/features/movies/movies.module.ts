@@ -8,8 +8,9 @@ import { featureName, reducers } from './reducers';
 import { HttpClientModule } from '@angular/common/http';
 import { EffectsModule } from '@ngrx/effects';
 import { ListEffects } from './effects/list.effects';
+import { NflComponent } from './components/nfl/nfl.component';
 @NgModule({
-  declarations: [MoviesComponent, EntryComponent, ListComponent],
+  declarations: [MoviesComponent, EntryComponent, ListComponent, NflComponent],
   imports: [
     CommonModule,
     HttpClientModule,

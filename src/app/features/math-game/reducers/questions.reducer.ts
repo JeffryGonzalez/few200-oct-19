@@ -30,7 +30,8 @@ const initialState: State = {
 const reducerFunction = createReducer(
   initialState,
   on(actions.guessedCorrectly, (state) => ({ ...state, currentQuestion: state.currentQuestion + 1 })),
-  on(actions.guessedIncorrectly, (state) => ({ ...state, wrongGuesses: state.wrongGuesses + 1 }))
+  on(actions.guessedIncorrectly, (state) => ({ ...state, wrongGuesses: state.wrongGuesses + 1 })),
+  on(actions.playAgain, state => initialState)
 );
 
 export function reducer(state: State = initialState, action: Action) {

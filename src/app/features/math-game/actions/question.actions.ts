@@ -7,3 +7,7 @@ export const guessedCorrectly = createAction(
 export const guessedIncorrectly = createAction(
   '[math game] guessed incorrectly'
 );
+
+export const playAgain = createAction(
+  '[math game] play again'
+);

@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 import { QuestionEntity } from './reducers/questions.reducer';
 import { Store } from '@ngrx/store';
 import { MathGameState, selectCurrentQuestion, selectGameOverYouLose, selectGameOverWin, selectStillPlaying } from './reducers';
-import { guessedCorrectly, guessedIncorrectly } from './actions/question.actions';
+import { guessedCorrectly, guessedIncorrectly, playAgain } from './actions/question.actions';
 
 @Component({
   selector: 'app-math-game',
@@ -16,6 +16,7 @@ export class MathGameComponent implements OnInit {
   gameOverLose$: Observable<boolean>;
   stillPlaying$: Observable<boolean>;
   gameOverWin$: Observable<boolean>;
+  wrong = false;
   constructor(private store: Store<MathGameState>) { }
 
   ngOnInit() {
@@ -25,11 +26,21 @@ export class MathGameComponent implements OnInit {
     this.stillPlaying$ = this.store.select(selectStillPlaying);
   }
 
+  replay() {
+    this.store.dispatch(playAgain());
+    this.wrong = false;
+  }
   provideAnswer(answer: string, answerEl: HTMLInputElement) {
     if (answer === answerEl.value) {
       this.store.dispatch(guessedCorrectly());
+      this.wrong = false;
+      answerEl.value = '';
+      answerEl.focus();
     } else {
       this.store.dispatch(guessedIncorrectly());
+      this.wrong = true;
+      answerEl.select();
+      answerEl.focus();
     }
   }
 }

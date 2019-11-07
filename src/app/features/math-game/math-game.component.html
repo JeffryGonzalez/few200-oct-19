@@ -15,16 +15,25 @@
              (click)="provideAnswer(answer.value, guess) "
              class="btn btn-success"
              value="Answer">
-      <div class="alert alert-danger">Wrong!</div>
+      <div [hidden]="!wrong"
+           class="alert alert-danger">Wrong!</div>
     </div>
   </div>
-  <pre>Question {{ currentQuestion$ | async | json }}</pre>
+
 </section>
 <div *ngIf="gameOverWin$ | async"
      class="alert alert-success">
   <h3>You Win!</h3>
+  <input type="button"
+         class="btn btn-primary"
+         value="Play Again!"
+         (click)="replay()">
 </div>
 <div *ngIf="gameOverLose$ | async"
      class="alert alert-danger">
   <h3>YOU LOSE!</h3>
+  <input type="button"
+         class="btn btn-primary"
+         value="Play Again!"
+         (click)="replay()">
 </div>
