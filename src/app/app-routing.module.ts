@@ -5,6 +5,7 @@ import { TipCalculatorComponent } from './components/tip-calculator/tip-calculat
 import { TodosComponent } from './components/todos/todos.component';
 import { CounterComponent } from './components/counter/counter.component';
 import { MoviesComponent } from './features/movies/movies.component';
+import { MathGameComponent } from './features/math-game/math-game.component';
 
 
 const routes: Routes = [
@@ -15,6 +16,10 @@ const routes: Routes = [
   {
     path: 'movies',
     component: MoviesComponent
+  },
+  {
+    path: 'math-game',
+    component: MathGameComponent
   },
   {
     path: 'tip',
